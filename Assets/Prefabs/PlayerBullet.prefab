@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446380}
   - 50: {fileID: 5092976}
+  - 114: {fileID: 11474784}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -102,6 +103,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &11474784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3445cead250b24165bf66da2fd89b5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!212 &21241910
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,7 +137,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1924401625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9a0317eefd42740f0997b1c4587a47ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,7 +163,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1924401625
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9a0317eefd42740f0997b1c4587a47ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -160,7 +173,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1924401625
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176930}

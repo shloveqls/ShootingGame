@@ -3,20 +3,17 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	// 移動スピード
-	public float speed = 5;
-
-	// PlayerBulletプレハブ
-	public GameObject bullet;
-
+	// Spaceshipコンポーネント
+	private Spaceship spaceship;
+	
 	// Startメソッドをコルーチンとして呼び出す
-	IEnumerator Start () {
-		while (true) {
-			// 弾をプレイヤーと同じ位置/角度で作成
-			Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
-			// 0.05秒待つ
-			yield return new WaitForSeconds(0.05f);
-		}
+	void Start () {
+
+		// Spaceshipコンポーネントを取得
+		spaceship = gameObject.GetComponent<Spaceship> ();
+
+		StartCoroutine ("InitBullet");
+
 	}
 	
 	// Update is called once per frame
@@ -31,9 +28,22 @@ public class Player : MonoBehaviour {
 		// 移動する向きを求める
 		Vector2 direction = new Vector2 (x, y).normalized;
 
-		// 移動する向きとスピードを代入する
-		Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D> ();
-		rigidbody2D.velocity = direction * speed;
+		// 移動
+		spaceship.Move (direction);
+
+	}
+
+	private IEnumerator InitBullet() {
+
+		while (true) {
+
+			// 弾をプレイヤーと同じ位置/角度で作成
+			spaceship.Shot (gameObject.transform);
+
+			// shotDelay秒待つ
+			yield return new WaitForSeconds(spaceship.shotDelay);
+
+		}
 
 	}
 
