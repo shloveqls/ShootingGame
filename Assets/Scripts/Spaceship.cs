@@ -17,6 +17,9 @@ public class Spaceship : MonoBehaviour {
 	// 弾のPrefab
 	public GameObject bullet;
 
+	// 爆発のPrefab
+	public GameObject explosion;
+
 	// 弾の作成
 	public void Shot (Transform origin)
 	{
@@ -28,6 +31,11 @@ public class Spaceship : MonoBehaviour {
 	{
 		Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 		rigidbody2D.velocity = direction * speed;
+	}
+
+	// 爆発の作成
+	public void Explosion() {
+		Instantiate (explosion, transform.position, transform.rotation);
 	}
 
 }
