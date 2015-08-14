@@ -10,6 +10,10 @@ GameObject:
   - 4: {fileID: 483656}
   - 212: {fileID: 21262956}
   - 95: {fileID: 9511066}
+  - 50: {fileID: 5040212}
+  - 61: {fileID: 6158892}
+  - 114: {fileID: 11480044}
+  - 114: {fileID: 11476532}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -24,11 +28,40 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.37691593, y: -3.08220339, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5040212
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116050}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &6158892
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116050}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .0500000007, y: .0500000007}
 --- !u!95 &9511066
 Animator:
   serializedVersion: 3
@@ -46,6 +79,33 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11476532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9821f9ac5dbc141c9999943e07330cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  canShot: 1
+  shotDelay: .0500000007
+  bullet: {fileID: 141100, guid: 704ffb3bedee34dbdb87b966a6f370ea, type: 2}
+  explosion: {fileID: 103818, guid: 9a80add8e12da4a75a6a2d7f5b2f506e, type: 2}
+--- !u!114 &11480044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04decf85f1106445ab59cf0ca3bf6167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21262956
 SpriteRenderer:
   m_ObjectHideFlags: 1
