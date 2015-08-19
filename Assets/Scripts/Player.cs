@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -60,6 +60,10 @@ public class Player : MonoBehaviour {
 
 			// 弾をプレイヤーと同じ位置/角度で作成
 			spaceship.Shot (gameObject.transform);
+
+			// ショット音を鳴らす
+			AudioSource audio = gameObject.GetComponent<AudioSource>();
+			audio.Play();
 
 			// shotDelay秒待つ
 			yield return new WaitForSeconds(spaceship.shotDelay);
