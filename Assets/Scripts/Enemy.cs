@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
+	// ヒットポイント
+	public int hp = 1;
+
 	// Spaceshipコンポーネント
 	private Spaceship spaceship;
 
@@ -34,14 +37,28 @@ public class Enemy : MonoBehaviour {
 		// レイヤー名がBullet (Player)以外の時は何も行わない
 		if (!"Bullet (Player)".Equals (layerName)) return;
 
+		// PlayerBulletのTransformを取得
+		Transform playerBulletTransform = other.transform.parent;
+
+		// Bulletコンポーネントを取得
+		Bullet bullet = playerBulletTransform.GetComponent<Bullet> ();
+
+		// ヒットポイントを減らす
+		hp = hp - bullet.power;
+		
 		// 弾の削除
 		Destroy (other.gameObject);
 
-		// 爆発
-		spaceship.Explosion ();
-
-		// エネミーの削除
-		Destroy (gameObject);
+		// ヒットポイントが0以下であれば
+		if (hp <= 0) {
+			// 爆発
+			spaceship.Explosion ();
+			
+			// エネミーの削除
+			Destroy (gameObject);
+		} else {
+			spaceship.GetAnimator().SetTrigger("Damage");
+		}
 
 	}
 

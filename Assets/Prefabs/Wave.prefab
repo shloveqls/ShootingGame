@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ba3cc8ded554413b0ad63f1865c7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
 --- !u!114 &11447314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,6 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ba3cc8ded554413b0ad63f1865c7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
 --- !u!114 &11456202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -608,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ba3cc8ded554413b0ad63f1865c7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
 --- !u!114 &11495134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,6 +715,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: canShot
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hp
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
