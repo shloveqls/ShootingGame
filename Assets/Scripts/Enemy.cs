@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 		spaceship = gameObject.GetComponent<Spaceship> ();
 
 		// ローカル座標のY軸のマイナス方向に移動する
-		spaceship.Move (gameObject.transform.up * -1);
+		Move (transform.up * -1);
 
 		StartCoroutine ("InitBullet");
 
@@ -43,6 +43,13 @@ public class Enemy : MonoBehaviour {
 		// エネミーの削除
 		Destroy (gameObject);
 
+	}
+
+	// 機体の移動
+	public void Move (Vector2 direction)
+	{
+		Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+		rigidbody2D.velocity = direction * spaceship.speed;
 	}
 
 	private IEnumerator InitBullet() {

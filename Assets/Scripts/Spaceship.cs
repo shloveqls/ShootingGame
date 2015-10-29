@@ -25,17 +25,9 @@ public class Spaceship : MonoBehaviour {
 	{
 		Instantiate (bullet, origin.position, origin.rotation);
 	}
-	
-	// 機体の移動
-	public void Move (Vector2 direction)
-	{
-		Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
-		rigidbody2D.velocity = direction * speed;
-	}
 
 	// 爆発の作成
 	public void Explosion() {
 		Instantiate (explosion, transform.position, transform.rotation);
 	}
-
 }
