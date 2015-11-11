@@ -68,7 +68,7 @@ public class Player : MonoBehaviour {
 
 		if ("Bullet (Enemy)".Equals(layerName) || "Enemy".Equals(layerName)) {
 			// Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
-			Manager manager = GameObject.FindObjectOfType<Manager>();
+			Manager manager = FindObjectOfType<Manager>();
 			manager.GameOver();
 
 			// 爆発する

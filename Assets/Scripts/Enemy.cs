@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour {
 	// ヒットポイント
 	public int hp = 1;
 
+	// スコアのポイント
+	public int point = 100;
+
 	// Spaceshipコンポーネント
 	private Spaceship spaceship;
 
@@ -51,6 +54,10 @@ public class Enemy : MonoBehaviour {
 
 		// ヒットポイントが0以下であれば
 		if (hp <= 0) {
+			// スコアコンポーネントを取得してポイントを追加
+			Score score = FindObjectOfType<Score>();
+			score.AddPoint(point);
+
 			// 爆発
 			spaceship.Explosion ();
 			
